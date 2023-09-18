@@ -1,4 +1,4 @@
-# Create new Database and new user
+# Create a new Database and a new user
 
 `sudo service postgresql start`
 
