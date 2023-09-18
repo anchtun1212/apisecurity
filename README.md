@@ -12,4 +12,4 @@ postgres=# `grant all privileges on database springdb to springuser;`
 
 # Docs API
 
-open: localhost:8098/swagger-ui.html
+open: http://localhost:8098/swagger-ui.html
