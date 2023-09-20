@@ -13,3 +13,7 @@ postgres=# `grant all privileges on database springdb to springuser;`
 # Docs API
 
 open: http://localhost:8098/swagger-ui.html
+
+# Stored procedure
+
+Execute the file: `stored_procedure.sql` manually
