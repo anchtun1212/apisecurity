@@ -45,9 +45,10 @@ public class JdbcCustomerDangerRepository {
 	}
 	
 	public void createCustomer(JdbcCustomer newCustomer) {
-		var sql = "INSERT INTO jdbc_customer(full_name, email, gender, birth_date) " + "VALUES ('"
-				+ newCustomer.getFullName() + "', '" + newCustomer.getEmail() + "', '" + newCustomer.getGender()
-				+ "', '" + newCustomer.getBirthDate() + "');";
+		var sql = "INSERT INTO jdbc_customer(full_name, email, birth_date, gender) " + "VALUES ('"
+				+ newCustomer.getFullName() + "', '" + newCustomer.getEmail()
+				+ "', '" + newCustomer.getBirthDate() 
+				+ "', '" + newCustomer.getGender() + "');";
 
 		jdbcTemplate.execute(sql);
 	}
