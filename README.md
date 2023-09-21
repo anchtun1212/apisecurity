@@ -16,4 +16,5 @@ open: http://localhost:8098/swagger-ui.html
 
 # Stored procedure
 
-Execute the file: `stored_procedure.sql` manually
+This file `fix_stored_procedure.sql` contains the correct syntax to avoid SQL Injection.
+Execute the stored procedures manually
