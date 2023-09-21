@@ -13,6 +13,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import jakarta.servlet.FilterChain;
@@ -20,7 +21,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//@Component
+@Component
 public class SqlInjectionFilter extends OncePerRequestFilter {
 
 	// So we need to specify the dangerous regular expression.
@@ -43,13 +44,14 @@ public class SqlInjectionFilter extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
+		var cachedHttpRequest = new CachedBodyHttpServletRequest(request);
 
-		var queryString = URLDecoder.decode(Optional.ofNullable(request.getQueryString()).orElse(StringUtils.EMPTY), StandardCharsets.UTF_8);
-		var pathVariables = URLDecoder.decode(Optional.ofNullable(request.getRequestURI()).orElse(StringUtils.EMPTY), StandardCharsets.UTF_8);
-		var requestBody = IOUtils.toString(request.getReader()).replaceAll("\\r\\n|\\r|\\n", "");
+		var queryString = URLDecoder.decode(Optional.ofNullable(cachedHttpRequest.getQueryString()).orElse(StringUtils.EMPTY), StandardCharsets.UTF_8);
+		var pathVariables = URLDecoder.decode(Optional.ofNullable(cachedHttpRequest.getRequestURI()).orElse(StringUtils.EMPTY), StandardCharsets.UTF_8);
+		var requestBody = IOUtils.toString(cachedHttpRequest.getReader()).replaceAll("\\r\\n|\\r|\\n", "");
 
 		if (isSqlInjectionSafe(queryString) && isSqlInjectionSafe(pathVariables) && isSqlInjectionSafe(requestBody)) {
-			chain.doFilter(request, response);
+			chain.doFilter(cachedHttpRequest, response);
 		} else {
 			response.setStatus(HttpStatus.BAD_REQUEST.value());
 			response.setContentType(MediaType.APPLICATION_JSON_VALUE);

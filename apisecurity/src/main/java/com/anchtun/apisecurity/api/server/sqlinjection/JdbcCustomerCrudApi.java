@@ -2,6 +2,7 @@ package com.anchtun.apisecurity.api.server.sqlinjection;
 
 import java.util.List;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +16,13 @@ import com.anchtun.apisecurity.api.request.sqlinjection.JdbcCustomerPatchRequest
 import com.anchtun.apisecurity.entity.JdbcCustomer;
 import com.anchtun.apisecurity.repository.JdbcCustomerCrudRepository;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/sqlinjection/crud/v1")
+@Validated
 public class JdbcCustomerCrudApi {
 
 	private final JdbcCustomerCrudRepository repository;
@@ -42,7 +45,7 @@ public class JdbcCustomerCrudApi {
 	}
 
 	@PostMapping(value = "/customer")
-	public void createCustomer(@RequestBody(required = true) JdbcCustomer newCustomer) {
+	public void createCustomer(@RequestBody(required = true) @Valid JdbcCustomer newCustomer) {
 		repository.save(newCustomer);
 	}
 

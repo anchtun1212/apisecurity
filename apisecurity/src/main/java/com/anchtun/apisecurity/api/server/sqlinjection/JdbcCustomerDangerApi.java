@@ -45,8 +45,7 @@ public class JdbcCustomerDangerApi {
 	}
 
 	@PatchMapping(value = "/customer/{customerId}")
-	public void updateCustomerFullName(@PathVariable(required = true, name = "customerId") int customerId,
-			@RequestBody(required = true) JdbcCustomerPatchRequest request) {
+	public void updateCustomerFullName(@PathVariable(required = true, name = "customerId") int customerId, @RequestBody(required = true) JdbcCustomerPatchRequest request) {
 		repository.updateCustomerFullName(customerId, request.getNewFullName());
 	}
 }
