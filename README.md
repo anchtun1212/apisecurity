@@ -18,4 +18,6 @@ open: http://localhost:8098/swagger-ui.html
 
 This file `fix_stored_procedure.sql` contains the correct syntax to avoid SQL Injection.
 
-Execute the stored procedures manually
+Execute the stored procedures manually.
+
+To create a limited user privilege: execute `create_limited_user.sql`.
