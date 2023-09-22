@@ -26,7 +26,7 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 
 1) If you need to uninstall `nodejs` run those commands:
 
-       sudo rm /user/bin/node
+       sudo rm /usr/bin/node
        sudo apt-get remove nodejs
        cd /etc/apt/sources.list.d;ls
        rm -rf nodesource.list nodesource.list.distUpgrade
@@ -35,4 +35,28 @@ To create a limited user privilege: execute `create_limited_user.sql`.
        sudo apt-get purge – auto-remove nodejs
        sudo apt-get autoremove
 
-2) 
+2) Then install `nodejs`, follow the instructions in this link:
+
+   https://github.com/nodesource/distributions
+
+3) Run those commands:
+   cd /home/mohammedayman/git/apisecurity
+   npx create-react-app frontend
+   npm install react-router-dom --save
+   npm install @tinymce/tinymce-react
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
