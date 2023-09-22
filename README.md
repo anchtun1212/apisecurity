@@ -21,3 +21,18 @@ This file `fix_stored_procedure.sql` contains the correct syntax to avoid SQL In
 Execute the stored procedures manually.
 
 To create a limited user privilege: execute `create_limited_user.sql`.
+
+# Create a ReactJS application
+
+1) If you need to uninstall `nodejs` run those commands:
+
+       sudo rm /user/bin/node
+       sudo apt-get remove nodejs
+       cd /etc/apt/sources.list.d;ls
+       rm -rf nodesource.list nodesource.list.distUpgrade
+       sudo apt-get update
+       sudo apt-get purge nodejs
+       sudo apt-get purge – auto-remove nodejs
+       sudo apt-get autoremove
+
+2) 
