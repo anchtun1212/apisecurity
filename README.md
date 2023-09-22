@@ -40,10 +40,10 @@ To create a limited user privilege: execute `create_limited_user.sql`.
    https://github.com/nodesource/distributions
 
 3) Run those commands:
-4) 
-   cd /home/mohammedayman/git/apisecurity
-   npx create-react-app frontend
-   npm install react-router-dom --save
-   npm install @tinymce/tinymce-react
+   
+          cd /home/mohammedayman/git/apisecurity
+          npx create-react-app frontend
+          npm install react-router-dom --save
+          npm install @tinymce/tinymce-react
 
    
