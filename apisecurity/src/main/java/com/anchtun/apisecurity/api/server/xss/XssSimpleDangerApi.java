@@ -1,4 +1,4 @@
-package com.anchtun.apisecurity.api.server.sqlinjection.xss;
+package com.anchtun.apisecurity.api.server.xss;
 
 import java.time.LocalTime;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/xss/danger/v1")
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 public class XssSimpleDangerApi {
 
 	@GetMapping(value = "/greeting")
