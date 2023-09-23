@@ -55,3 +55,4 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 # Important Links
 - Content Security Policy - https://content-security-policy.com/
 - OWASP Cheat Sheet Series - https://cheatsheetseries.owasp.org/index.html
+- REST Security Cheat Sheet - https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
