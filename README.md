@@ -47,9 +47,10 @@ To create a limited user privilege: execute `create_limited_user.sql`.
        npm install react-router-dom@5.3.0 --save
        npm install @tinymce/tinymce-react
 
-# Important Links
-- Content Security Policy - https://content-security-policy.com/
 4) Then run the application: `npm start`
 
     The application will open on this link: http://localhost:3000/
    
+
+# Important Links
+- Content Security Policy - https://content-security-policy.com/
