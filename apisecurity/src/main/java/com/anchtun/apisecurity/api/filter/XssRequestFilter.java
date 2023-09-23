@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -55,7 +54,7 @@ public class XssRequestFilter extends OncePerRequestFilter {
 			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 			PrintWriter writer = response.getWriter();
 			writer.print("{\"message\":\"XSS detected\"}");
-			response.addHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:3000");
+			//response.addHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:3000");
 			return;
 		}
 	}
