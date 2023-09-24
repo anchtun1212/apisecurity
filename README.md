@@ -50,9 +50,15 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 4) Then run the application: `npm start`
 
     The application will open on this link: http://localhost:3000/
-   
+
+# Run Jmeter
+
+1) Download the `.tgz` file from: https://jmeter.apache.org/download_jmeter.cgi
+2) Extract the file and go to `bin` directory and run: `sh jmeter.sh`
+
 
 # Important Links
 - Content Security Policy - https://content-security-policy.com/
 - OWASP Cheat Sheet Series - https://cheatsheetseries.owasp.org/index.html
 - REST Security Cheat Sheet - https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
+- Apache JMeter - https://jmeter.apache.org/
