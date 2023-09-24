@@ -55,6 +55,7 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 
 1) Download the `.tgz` file from: https://jmeter.apache.org/download_jmeter.cgi
 2) Extract the file and go to `bin` directory and run: `sh jmeter.sh`
+3) You can see the image `jmeter-DoS.png` that illustrate DoS attack (CPU: 100%)
 
 
 # Important Links
