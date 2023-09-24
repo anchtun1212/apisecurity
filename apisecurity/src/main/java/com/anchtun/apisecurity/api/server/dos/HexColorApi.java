@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.anchtun.apisecurity.entity.HexColor;
+import com.anchtun.apisecurity.api.response.dos.HexColor;
+import com.anchtun.apisecurity.api.response.dos.HexColorPaginationResponse;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
@@ -31,7 +32,7 @@ public class HexColorApi {
 		hexColors = IntStream.rangeClosed(1, COLORS_SIZE).boxed().parallel().map(v -> {
 			var hexColor = new HexColor();
 			hexColor.setId(v);
-			//hexColor.setHexColor(randomColorHex());
+			hexColor.setHexColor(randomColorHex());
 
 			return hexColor;
 		}).collect(Collectors.toList());
@@ -42,8 +43,9 @@ public class HexColorApi {
 		return hexColors;
 	}
 
-	/*@GetMapping(value = "/random-colors-pagination", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/random-colors-pagination", produces = MediaType.APPLICATION_JSON_VALUE)
 	// use 1-based for easier
+	// We will allow between 10 and 100 data to retrieved at once.
 	public HexColorPaginationResponse randomColors(@RequestParam(required = true, name = "page") int page,
 			@Valid @Min(10) @Max(100) @RequestParam(required = true, name = "size") int size) {
 		var startIndex = (page - 1) * size;
@@ -53,6 +55,7 @@ public class HexColorApi {
 		response.setColors(sublist);
 		response.setCurrentPage(page);
 		response.setSize(size);
+		// Total page is total data divided by size
 		response.setTotalPages((int) Math.ceil(COLORS_SIZE / size));
 
 		return response;
@@ -64,6 +67,6 @@ public class HexColorApi {
 
 		// format as hashtag and leading zeros (hex color code)
 		return String.format("#%06x", randomInt);
-	}*/
+	}
 
 }
