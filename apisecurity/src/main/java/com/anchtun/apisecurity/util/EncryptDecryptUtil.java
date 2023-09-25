@@ -1,4 +1,4 @@
-package com.anchtun.apisecurity.api.server.util;
+package com.anchtun.apisecurity.util;
 
 import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
