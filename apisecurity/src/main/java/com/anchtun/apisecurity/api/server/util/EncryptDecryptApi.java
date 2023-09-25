@@ -1,4 +1,4 @@
-package com.anchtun.apisecurity.api.request.util;
+package com.anchtun.apisecurity.api.server.util;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.anchtun.apisecurity.api.request.util.OriginalStringRequest;
 import com.anchtun.apisecurity.util.EncryptDecryptUtil;
 
 @RestController
