@@ -2,7 +2,6 @@ package com.anchtun.apisecurity.api.filter.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.anchtun.apisecurity.api.filter.HmacFilter;
 
