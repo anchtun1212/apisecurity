@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.anchtun.apisecurity.api.filter.HmacFilter;
 
-@Configuration
+//@Configuration
 public class HmacFilterConfig {
 
 	@Bean
