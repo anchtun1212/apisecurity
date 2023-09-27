@@ -66,3 +66,4 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 - OWASP Cheat Sheet Series - https://cheatsheetseries.owasp.org/index.html
 - REST Security Cheat Sheet - https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
 - Apache JMeter - https://jmeter.apache.org/
+- Domain needs to be treated as https only - chrome://net-internals/#htst
