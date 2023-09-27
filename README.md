@@ -57,6 +57,9 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 2) Extract the file and go to `bin` directory and run: `sh jmeter.sh`
 3) You can see the image `jmeter-DoS.png` that illustrate DoS attack (CPU: 100%)
 
+# Create self-signed certificate with 10 years validity period (not trusted by Browsers: Browsers only trust Certificates from CA)
+
+`keytool -genkeypair -alias apisecurity -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore apisecurity.p12 -validity 3650`
 
 # Important Links
 - Content Security Policy - https://content-security-policy.com/
