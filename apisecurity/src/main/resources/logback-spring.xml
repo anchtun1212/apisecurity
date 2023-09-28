@@ -12,12 +12,13 @@
 	</root>
 
 	<appender name="LOGGLY" class="ch.qos.logback.ext.loggly.LogglyAppender">
-		<endpointUrl>https://logs-01.loggly.com/inputs/0740d43a-9028-4eb5-9252-2e54a80ab933/tag/apisecurity
+	    <!-- 339c6093-f886-4606-9808-81be44c98cbd is the customer token: I get it from: anchtun.loggly.com -->
+		<endpointUrl>https://logs-01.loggly.com/inputs/339c6093-f886-4606-9808-81be44c98cbd/tag/apisecurity
 		</endpointUrl>
 		<pattern>%m</pattern>
 	</appender>
 
-	<logger name="com.course.apisecurity.api.filter.AuditLogFilter" level="info" additivity="false">
+	<logger name="com.anchtun.apisecurity.api.filter.AuditLogFilter" level="info" additivity="false">
 		<appender-ref ref="LOGGLY" />
 	</logger>
 
