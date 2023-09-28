@@ -8,7 +8,6 @@ import java.util.concurrent.Executors;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.anchtun.apisecurity.entity.AuditLogEntry;
@@ -20,7 +19,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Component
+//@Component
 public class AuditLogFilter extends OncePerRequestFilter {
 
 	private ObjectMapper objectMapper = new ObjectMapper();
