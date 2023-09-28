@@ -67,6 +67,7 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 - REST Security Cheat Sheet - https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
 - Apache JMeter - https://jmeter.apache.org/
 - Loggly - https://www.loggly.com/
+- Loggly (Documentation for Loggly) - https://documentation.solarwinds.com/en/success_center/loggly/content/admin/logging-setup.htm
 
 # Tips
 - Domain needs to be treated as https only - chrome://net-internals/#htst
