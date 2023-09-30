@@ -73,3 +73,17 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 
 # Tips
 - Domain needs to be treated as https only - chrome://net-internals/#htst
+- Swagger UI:
+  In `Spring Boot 3.X` add this dependency in your `pom.xml`:
+
+  		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+  Then open this URL:
+
+  http://localhost:8098/swagger-ui/index.html
+  
+  
