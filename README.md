@@ -70,6 +70,7 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 - Loggly (Documentation for Loggly) - https://documentation.solarwinds.com/en/success_center/loggly/content/admin/logging-setup.htm
 - Loggly (Java Logback Setup) - https://documentation.solarwinds.com/en/success_center/loggly/content/admin/java-logback.htm
 - CORS - https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+- Redis - http://redis.io/
 
 # Tips
 - Domain needs to be treated as https only - chrome://net-internals/#htst
