@@ -18,6 +18,9 @@ public class SessionCookieTokenService {
 
 	public String store(HttpServletRequest request, SessionCookieToken token) throws NoSuchAlgorithmException {
 		// session fixation
+		// In the first line, we retrieve session, without creating new session if not exists.
+        // However if there is existing session, we first invalidate that existing session, before creating
+        // new one. This way, the session ID will always new
 		var session = request.getSession(false);
 
 		if (session != null) {
@@ -30,6 +33,7 @@ public class SessionCookieTokenService {
 		session.setAttribute(SessionCookieConstant.SESSION_ATTRIBUTE_USERNAME, token.getUsername());
 
 		// CSRF
+		// we use username as salt
 		return HashUtil.sha256(session.getId(), token.getUsername());
 		// CSRF
 	}
@@ -44,6 +48,7 @@ public class SessionCookieTokenService {
 			return Optional.empty();
 		}
 
+		// In the read method, we need to check whether provided token is really the session cookie.
 		var username = (String) session.getAttribute(SessionCookieConstant.SESSION_ATTRIBUTE_USERNAME);
 
 		var computedTokenId = HashUtil.sha256(session.getId(), username);

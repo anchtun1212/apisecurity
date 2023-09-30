@@ -29,6 +29,7 @@ public class SessionCookieTokenFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
 		try {
+			// In the filter, we need to validate whether there is a valid cookie
 			if (isValidSessionCookie(request)) {
 				chain.doFilter(request, response);
 			} else {
@@ -45,6 +46,7 @@ public class SessionCookieTokenFilter extends OncePerRequestFilter {
 
 	private boolean isValidSessionCookie(HttpServletRequest request) throws NoSuchAlgorithmException {
 		// CSRF
+		// we need to provide token ID, which is taken from custom header X-CSRF.
 		var csrfToken = request.getHeader("X-CSRF");
 
 		if (StringUtils.isBlank(csrfToken)) {
@@ -54,6 +56,7 @@ public class SessionCookieTokenFilter extends OncePerRequestFilter {
 
 		var token = tokenService.read(request, csrfToken);
 
+		// We will return true, and set valid username at request attribute, if the token is present
 		if (token.isPresent()) {
 			request.setAttribute(SessionCookieConstant.REQUEST_ATTRIBUTE_USERNAME, token.get().getUsername());
 			return true;
