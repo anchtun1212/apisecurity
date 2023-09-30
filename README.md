@@ -86,5 +86,11 @@ To create a limited user privilege: execute `create_limited_user.sql`.
   Then open this URL:
 
   http://localhost:8098/swagger-ui/index.html
-  
+
+#Redis
+
+- By default there is no password
+- Start a redis instance: `sudo docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest`
+
+
   
