@@ -10,10 +10,6 @@ postgres=# `create user springuser with encrypted password 'springpass';`
 
 postgres=# `grant all privileges on database springdb to springuser;`
 
-# Docs API
-
-open: http://localhost:8098/swagger-ui.html
-
 # Stored procedure
 
 This file `fix_stored_procedure.sql` contains the correct syntax to avoid SQL Injection.
@@ -61,6 +57,10 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 
 `keytool -genkeypair -alias apisecurity -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore apisecurity.p12 -validity 3650`
 
+# Redis
+- By default there is no password
+- Start a redis instance: `sudo docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest`
+
 # Important Links
 - Content Security Policy - https://content-security-policy.com/
 - OWASP Cheat Sheet Series - https://cheatsheetseries.owasp.org/index.html
@@ -87,10 +87,3 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 
   http://localhost:8098/swagger-ui/index.html
 
-#Redis
-
-- By default there is no password
-- Start a redis instance: `sudo docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest`
-
-
-  
