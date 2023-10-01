@@ -12,7 +12,7 @@ import com.anchtun.apisecurity.service.SessionCookieTokenService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-@Configuration
+//@Configuration
 public class SessionCookieFilterConfig {
 
 	private final BasicAuthUserRepository basicAuthUserRepository;
