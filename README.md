@@ -87,3 +87,8 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 
   http://localhost:8098/swagger-ui/index.html
 
+  To see Redis Tokens:
+  
+		sudo docker exec -it [container_id] bash
+  		redis-cli
+  		keys *
