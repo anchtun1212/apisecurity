@@ -72,6 +72,7 @@ To create a limited user privilege: execute `create_limited_user.sql`.
 - CORS - https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 - Redis - http://redis.io/
 - Okta - https://developer.okta.com/
+- Okta Create Free Account - https://www.okta.com/free-trial/
 
 # Tips
 - Domain needs to be treated as https only - chrome://net-internals/#htst
